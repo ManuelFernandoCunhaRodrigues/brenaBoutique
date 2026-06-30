@@ -1,0 +1,96 @@
+.carousel {
+  position: relative;
+}
+
+.carousel-viewport {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 18px;
+  will-change: transform;
+  cursor: grab;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-track .product-card {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.carousel-btn {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line-gold);
+  border-radius: 50%;
+  background: var(--perola);
+  color: var(--vinho);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+  background: var(--vinho);
+  border-color: var(--vinho);
+  color: var(--perola);
+  transform: scale(1.06);
+}
+
+@media (min-width: 560px) {
+  .carousel-track .product-card {
+    flex: 0 0 calc(50% - 9px);
+  }
+}
+
+@media (min-width: 980px) {
+  .carousel-track .product-card {
+    flex: 0 0 calc(33.333% - 12px);
+  }
+}
+
+/* ── Dots ─────────────────────────────────── */
+.carousel-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--vinho);
+  border-radius: 50%;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.carousel-dot.is-active {
+  background: var(--vinho);
+  transform: scale(1.3);
+}
+
+.carousel-dot:hover,
+.carousel-dot:focus-visible {
+  background: var(--vinho);
+  outline: 2px solid var(--champanhe);
+  outline-offset: 2px;
+}

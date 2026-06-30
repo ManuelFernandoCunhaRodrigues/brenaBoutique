@@ -1,0 +1,123 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--header-height) + 58px) 0 76px;
+  background:
+    radial-gradient(circle at 90% 14%, rgba(201, 162, 107, 0.3), transparent 26%),
+    linear-gradient(135deg, var(--plum) 0%, var(--vinho-prof) 44%, var(--vinho) 100%);
+}
+
+.hero::after {
+  position: absolute;
+  right: -120px;
+  bottom: -170px;
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(228, 207, 169, 0.28);
+  border-radius: 50%;
+  content: "";
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-subtitle {
+  max-width: 620px;
+  margin-bottom: 28px;
+  color: rgba(255, 253, 251, 0.86);
+  font-size: 1.06rem;
+}
+
+.hero-actions {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 24px;
+}
+
+.microproof {
+  max-width: 620px;
+  color: rgba(255, 253, 251, 0.82);
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.hero-media {
+  position: relative;
+  max-width: 370px;
+  margin: 0;
+  justify-self: center;
+}
+
+.hero-media::before {
+  position: absolute;
+  inset: 18px -16px -16px 18px;
+  border: 1px solid var(--champanhe);
+  border-radius: 150px 150px 8px 8px;
+  content: "";
+}
+
+.hero-media img {
+  position: relative;
+  width: 100%;
+  min-height: 430px;
+  border-radius: 150px 150px 8px 8px;
+  object-fit: cover;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.26);
+}
+
+.hero-media figcaption {
+  position: relative;
+  width: calc(100% - 34px);
+  margin: -24px auto 0;
+  border-top: 1px solid var(--line-gold);
+  background: var(--perola);
+  color: var(--vinho-prof);
+  padding: 10px 14px;
+  font-family: var(--label);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (min-width: 560px) {
+  .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 590px;
+  }
+}
+
+@media (min-width: 760px) {
+  .hero {
+    padding-top: calc(var(--header-height) + 76px);
+  }
+
+  .hero-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 980px) {
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.78fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-media img {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 359px) {
+  .hero-media img {
+    min-height: 280px;
+  }
+}
